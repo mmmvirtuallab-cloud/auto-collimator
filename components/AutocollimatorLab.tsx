@@ -496,12 +496,13 @@ useEffect(() => {
               Control Panel
             </h2>
             <button
-              onClick={() => window.location.href = '/'}
-              className="p-2 rounded-lg bg-sidebar hover:bg-sidebar-accent-foreground/10 transition text-sidebar-foreground"
-              title="Go to Home"
-            >
-              <Home size={18} />
-            </button>
+  // ⚠️ REPLACE 'https://YOUR-MAIN-WEBSITE.com' with your actual home URL
+  onClick={() => window.location.href = 'https://mmmvirtuallab-cloud.github.io/vl-homepage/'} 
+  className="p-2 rounded-lg bg-sidebar hover:bg-sidebar-accent-foreground/10 transition text-sidebar-foreground"
+  title="Go to Home"
+>
+  <Home size={18} />
+</button>
           </div>
           
           <div className="mb-4">
