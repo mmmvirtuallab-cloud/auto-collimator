@@ -2,16 +2,14 @@ name: Deploy to gh-pages Branch
 
 on:
   push:
-    branches: ["main"] # Ensure this matches your default branch
+    branches: ["main"]
 
 permissions:
-  contents: write # ⚠️ REQUIRED: Allows the bot to push to the gh-pages branch
+  contents: write
 
 jobs:
   build-and-deploy:
-    # Only run if commit message contains "build"
     if: contains(github.event.head_commit.message, 'build')
-    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,11 +25,12 @@ jobs:
         run: npm ci
 
       - name: Build Static Site
-        run: npm run build
-        # This creates the 'out' folder based on your next.config.js
+        run: |
+          npm run build
+          touch out/.nojekyll
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
+          folder: out
+          branch: gh-pages
