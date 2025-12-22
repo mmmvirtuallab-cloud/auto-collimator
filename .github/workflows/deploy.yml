@@ -37,10 +37,12 @@ jobs:
       - name: Build Static Site
         run: |
           pnpm run build
-          touch out/.nojekyll
+          # CHANGE: Use 'dist' instead of 'out'
+          touch dist/.nojekyll
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out
+          # CHANGE: Deploy the 'dist' folder
+          folder: dist
           branch: gh-pages
