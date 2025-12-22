@@ -9,24 +9,34 @@ permissions:
 
 jobs:
   build-and-deploy:
+    # Only run if commit message contains 'build'
     if: contains(github.event.head_commit.message, 'build')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 1. Install pnpm FIRST (Essential step)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9  # Uses the latest version of pnpm v9
+
+      # 2. Setup Node with pnpm caching
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: 'npm'
+          node-version: "20"  # Changed to LTS (24.x doesn't exist yet)
+          cache: 'pnpm'
 
+      # 3. Install dependencies using the correct pnpm command
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
+      # 4. Build (Using pnpm run is safer/cleaner)
       - name: Build Static Site
         run: |
-          npm run build
+          pnpm run build
           touch out/.nojekyll
 
       - name: Deploy to gh-pages branch
