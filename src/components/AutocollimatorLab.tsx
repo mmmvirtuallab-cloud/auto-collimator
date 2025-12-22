@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Eye, Zap, ZapOff, Play, RotateCcw, Home } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import IntroPage from '../IntroPage';
 
 const AutocollimatorLab = () => {
   const [step, setStep] = useState(0);
@@ -16,6 +18,7 @@ const AutocollimatorLab = () => {
   const [modalMessage, setModalMessage] = useState('');
   const [crosshairDeviation, setCrosshairDeviation] = useState(0);
   const [graphView, setGraphView] = useState<'crosshairs' | 'curve'>('crosshairs');
+  const navigate = useNavigate();
 
   const getStepMessage = () => {
     switch(step) {
@@ -36,7 +39,7 @@ const AutocollimatorLab = () => {
     setModalMessage(getStepMessage());
   }, [step, currentReading]);
 
-  const handleWorkpieceSelect = (type: string) => {
+  const handleWorkpieceSelect = (type: 'flat' | 'tapered') => {
     if (step === 0) {
       setWorkpiece(type);
       setStep(1);
@@ -496,8 +499,8 @@ useEffect(() => {
               Control Panel
             </h2>
             <button
-  // ⚠️ REPLACE 'https://YOUR-MAIN-WEBSITE.com' with your actual home URL
-  onClick={() => window.location.href = 'https://mmmvirtuallab-cloud.github.io/vl-homepage/'} 
+  
+  onClick={() => window.location.href = '/'} 
   className="p-2 rounded-lg bg-sidebar hover:bg-sidebar-accent-foreground/10 transition text-sidebar-foreground"
   title="Go to Home" 
 >
