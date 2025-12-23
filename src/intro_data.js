@@ -22,10 +22,10 @@ export const INTRO_CONTENT = {
     
     // Student List
     students: [
-        "A. M. ISMAIL - 2023507030",
-        "V. B. JAYARAM - 2023507040",
-        "M. RAM BHARATH - 2023507039",
-        "R. MONISH KUMAR - 2023507038"
+        "VINOTHA M - 2023507004", 
+        "SANDHIYA E - 2023507008", 
+        "KAVIYA M - 2023507022",
+        "HARIPRIYA R - 2023507036",
     ],
 
     // Footer Text
