@@ -500,7 +500,7 @@ useEffect(() => {
             </h2>
             <button
   
-  onClick={() => window.location.href = '/'} 
+  onClick={() => window.location.href = '/auto-collimator/'} 
   className="p-2 rounded-lg bg-sidebar hover:bg-sidebar-accent-foreground/10 transition text-sidebar-foreground"
   title="Go to Home" 
 >

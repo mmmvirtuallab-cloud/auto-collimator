@@ -1,7 +1,7 @@
 // src/intro_data.js
 export const INTRO_CONTENT = {
     // Top Blue Bar Text
-    headerTitle: "Profile Projector",
+    headerTitle: "Auto Collimator",
     
     // Button Text & Link
     buttonLabel: "Experiment",
@@ -10,11 +10,11 @@ export const INTRO_CONTENT = {
     buttonLink: "/lab", 
 
     // Main Page Content
-    mainHeading: "Profile Projector Virtual Experiment",
+    mainHeading: "Auto Collimator Virtual Lab",
     
     // Aim Section
     aimTitle: "Aim",
-    aimContent: "To study the working principle of a profile projector and to measure the dimensions of given components such as screw threads, gears, and other complex profiles accurately.",
+    aimContent: "To  measure small angular displacements and surface flatness using Autocollimator.",
 
     // Acknowledgement Section
     ackTitle: "Acknowledgement",

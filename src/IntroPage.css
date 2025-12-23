@@ -11,7 +11,7 @@
 
 /* --- Blue Header --- */
 .intro-header {
-  background-color: #2563EB;
+  background-color: #124b74;
   color: white;
   height: 70px; /* Slightly reduced height to save space */
   display: flex;
@@ -52,7 +52,7 @@
 /* --- Button --- */
 .header-btn {
   background-color: white;
-  color: #2563EB;
+  color: #124b74;
   border: none;
   padding: 10px 20px;
   font-size: 0.95rem;
